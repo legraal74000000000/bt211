@@ -1,54 +1,40 @@
 <DOCTYPE! html>
 <html>
 <head>
-  <style>
-  body {
-        -webkit-animation: colorchange 20s infinite;
-        animation: colorchange 20s infinite;
-      }
-      @-webkit-keyframes colorchange {
-        0% {
-          background: #fce9f5;
+
+
+
+<scripttype="text/javascript"src="script.js" async>
+<script type="text/javascript">
+  function validate() {
+            var msg;
+            var str = document.getElementById("mdp").value;
+            if (str.match( /[0-9]/g) &&
+                    str.match( /[A-Z]/g) &&
+                    str.match(/[a-z]/g) &&
+                    str.match( /[^a-zA-Z\d]/g) &&
+                    str.length >= 10)
+                msg = "<p style='color:green'>Mot de passe fort.</p>";
+            else
+                msg = "<p style='color:red'>Mot de passe faible.</p>";
+            document.getElementById("msg").innerHTML= msg;
         }
-        25% {
-          background: #fbf1f8;
-        }
-        50% {
-          background: #fbf5f9;
-        }
-        75% {
-          background: #f5edf3;
-        }
-        100% {
-          background: #fbe2e5;
-        }
-      }
-      @keyframes colorchange {
-        0% {
-          background: #fce9f5;
-        }
-        25% {
-          background: #fbf1f8;
-        }
-        50% {
-          background: #fbf5f9;
-        }
-        75% {
-          background: #f5edf3;
-        }
-        100% {
-          background: #fbe2e5;
-        }
-      }
+    </script>
 
 
 
 
-  </style>
+<link rel="stylesheet" href="feuille.css">
   <title>INES </title>
 </head>
 
 <body>
+  Entrez le mot de passe: <input id="mdp" />
+      <button onclick="validate()">Valider</button><br>
+      <span id="msg"></span> 
+
+
+
 <style contenteditable>
   .brd {
     border: 1px solid black;
@@ -69,14 +55,15 @@
   <button>Home</button>
   <button>Informations</button>
   <a href="https:" target="_BLANK"><button>  Log In</button> </a>
-  <label for="userPassword">Recherche:</label>
-<input id="userPassword" type="password">
+
+
+
 
 
   <hr>
   <div style="position:relative; height:400">
    <div style="position:absolute;z-index:1">
-      <img src="https://www.templon.com/images/6453.jpg" width="1500" height="400" >
+      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQvVHvyniQU3gK5gB2SK0MAu-I25pTAOjgrnVGugRc6ozrNp_Mc" width="1000" height="400">
    </div>
    <div style="position:absolute;top:250; width:1000; height:400; z-index:2;font-size:200%">
  <center><b><a href="" "> <button style=background-color:pink><p style="color:white"><i> Shopp Now </i></p></button><a/> </b></center>
@@ -91,24 +78,58 @@
 <div style="display:flex">
 <div><img src="https://ae01.alicdn.com/kf/H5ad4f7cc0e76431180ab9d2130ed4587b/Pull-ample-japonais-Vintage-pour-femme-v-tement-cor-en-Ulzzang-Kawaii-motif-fraise-Harajuku.jpg_Q90.jpg_.webp"  style="float:left;"> </div>
 <br>
+<div> <a href="https://i.etsystatic.com/18795838/r/il/fb8b04/2916292582/il_570xN.2916292582_jtxm.jpg"><img src="https://i.etsystatic.com/18795838/r/il/fb8b04/2916292582/il_570xN.2916292582_jtxm.jpg"width="200" height="200"style="float:right;"></a></div>
 </div>
 <a href="https://ae01.alicdn.com/kf/H5ad4f7cc0e76431180ab9d2130ed4587b/Pull-ample-japonais-Vintage-pour-femme-v-tement-cor-en-Ulzzang-Kawaii-motif-fraise-Harajuku.jpg_Q90.jpg_.webp" <h3><FONT face="drink"><p style="color:black">Pink Sweat 12.00$ - Best Price of The Month by Selena Gomez</p></FONT></h3></a>
+<label for="info">Aimez vous ce modèle ?</label>
+<input type="radio"> oui </ id="nom">
+<button type="submit" >Envoyer</button>
 
 
 
 
 
 
-<img src=""</img >
 <center> <h1><b> About our Purpose </b> </h1></center>
-<center><p FONT face="arial"> Our company has a goal of making
+<center><p FONT face="arial"> Our company aims to make
 equality between women of different sizes.
 Our big deal was to convice people of our products.
 Hopefully, today we have many shops all around the world.
-We want to make it compfy and make you feel better all the day along</FONT></p></center>
+We want to make it compfy and make you feel better all day along</FONT></p></center>
 <center><a href=" "> <button style=background-color:pink><p style="color:white"><i>Shopp Now</button></center>
 
-
+  <hr>
+  <div class="contactez-nous">
+<h1>Contact us</h1>
+<p>A problem ? A love letter maybe ? Super, don' hesitate to use this form to contact us ! </p>
+<form action="/page-traitement-donnees" method="post">
+<div>
+<label for="nom">Your Name</label>
+<input type="text" id="nom" name="nom" placeholder="Michael" required>
+</div>
+<div>
+<label for="email">Votre e-mail</label>
+<input type="email" id="email" name="email" placeholder="myemailadress.com" required>
+</div>
+<div>
+<label for="sujet">What is the subjet of your request ?</label>
+<select name="sujet" id="sujet" required>
+<option value="" disabled selected hidden>Choose the subject of your message</option>
+<option value="probleme-compte">Problem with my account</option>
+<option value="question-produit">Question to ask about my product</option>
+<option value="suivi-commande">Tracking my order</option>
+<option value="autre">Else...</option>
+</select>
+</div>
+<div>
+<label for="message">Your message</label>
+<textarea id="message" name="message" placeholder="Hi, I contact you because...." required></textarea>
+</div>
+<div>
+<button type="submit">Send my message</button>
+</div>
+</form>
+</div>
 
 
 
